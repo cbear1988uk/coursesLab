@@ -29,10 +29,10 @@ public class DataLoader implements ApplicationRunner {
         Course ruby = new Course("Ruby Fundamentals", "Edinburgh", "3/5");
         courseRepository.save(ruby);
 
-        Booking spring = new Booking("March 2020");
+        Booking spring = new Booking("March 2020", python);
         bookingRepository.save(spring);
 
-        Booking autumn = new Booking("September 2020");
+        Booking autumn = new Booking("September 2020", ruby);
         bookingRepository.save(autumn);
 
     }

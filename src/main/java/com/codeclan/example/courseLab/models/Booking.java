@@ -15,11 +15,11 @@ public class Booking {
     @Column(name = "date")
     private String date;
 
-//    @JsonIgnore
-//    @ManyToOne
-//    @JoinColumn(name = "course_id", nullable = false)
-//    private Course course;
-//
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "course_id", nullable = false)
+    private Course course;
+
 //    @JsonIgnore
 //    @ManyToOne
 //    @JoinColumn(name = "customer_id", nullable = false)
@@ -27,13 +27,20 @@ public class Booking {
 //
 ////    getters and setters
 
-    public Booking(String date){
+    public Booking(String date, Course course){
         this.date = date;
+        this.course = course;
     }
 
     public Booking(){}
 
+    public Course getCourse() {
+        return course;
+    }
 
+    public void setCourse(Course course) {
+        this.course = course;
+    }
 
     public void setId(Long id) {
         this.id = id;

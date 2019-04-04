@@ -22,15 +22,22 @@ public class Course {
     @Column(name = "starRating")
     private String starRating;
 
-//    @JsonIgnore
-//    @OneToMany(mappedBy = "courses", fetch = FetchType.LAZY)
-//    private List<Booking> bookings;
-////    getters and setters
+    @JsonIgnore
+    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
+    private List<Booking> bookings;
 
     public Course(String name, String town, String starRating){
         this.name = name;
         this.town = town;
         this.starRating = starRating;
+    }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
     }
 
     public void setId(Long id) {
