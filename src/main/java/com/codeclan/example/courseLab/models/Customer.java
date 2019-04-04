@@ -3,6 +3,7 @@ package com.codeclan.example.courseLab.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -33,6 +34,11 @@ public class Customer {
     }
 
     public Customer(){}
+
+
+    public void addBooking(Booking booking){
+        this.bookings.add(booking);
+    }
 
     public void setId(Long id) {
         this.id = id;

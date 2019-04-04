@@ -28,10 +28,10 @@ public class DataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args){
-        Course python = new Course("Intro to Python", "Glasgow", "4/5");
+        Course python = new Course("Intro to Python", "Glasgow", 4);
         courseRepository.save(python);
 
-        Course ruby = new Course("Ruby Fundamentals", "Edinburgh", "3/5");
+        Course ruby = new Course("Ruby Fundamentals", "Edinburgh", 3);
         courseRepository.save(ruby);
 
         Customer collin = new Customer("Collin Bull", "Glasgow", 30);
