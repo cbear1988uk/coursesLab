@@ -1,6 +1,7 @@
 package com.codeclan.example.courseLab.controller;
 
 import com.codeclan.example.courseLab.models.Course;
+import com.codeclan.example.courseLab.models.Customer;
 import com.codeclan.example.courseLab.repositories.CourseRepository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,11 @@ public class CourseController {
     @GetMapping(value = "/rating/{starRating}")
     public List<Course> findCourseFromRating(@PathVariable int starRating){
         return courseRepository.findCourseByStarRating(starRating);
+    }
+
+    @GetMapping(value = "/customer/{id}")
+    public List<Course> findCourseByCustomer(@PathVariable Long id){
+        return courseRepository.courseFromCustomer(id);
     }
 
 }
